@@ -1,0 +1,17 @@
+.status{
+    height: 40px;
+}
+
+.bigstatus{
+    display: inline-flex;
+}
+
+.colorpicker{
+    width: 10%;
+    display: block;
+}
+
+.currentcolor{
+    width: 100px;
+    height: 100px;
+}

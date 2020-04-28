@@ -2,12 +2,22 @@
 <html ng-app="appname">
 
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="js/angular.js"></script>
     <script src="js/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
 
   <body ng-controller="appCtrl">
-      <p>{{status}}</p>
+    <div class="bigstatus">
+      <p>api status:</p>  
+      <img ng-if="status" src="img/greenBar.png" class="status"></img>
+      <img ng-if="!status" src="img/redBar.png" class="status"></img>
+    </div>
+      <!-- now i need to set up the gui for the controller... -->
+    <p>current color: </p>
+    <div class="currentcolor" id="viewColor"></div>
+    <input id="html5colorpicker" name="colorp" type="color" class="colorpicker" onchange="changecolor(colorp.value)">
+    <input type="button" name="submitcolor" ng-click="changecolor()">
   </body>
 
 </html>
