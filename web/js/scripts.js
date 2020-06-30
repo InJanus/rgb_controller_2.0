@@ -1,6 +1,6 @@
 var appname = angular.module('appname', []);
 appname.controller('appCtrl', ['$scope', '$http', function($scope, $http) {
-    $http.get("http://127.0.0.1:5000/api/getstatus").then(function(data){
+    $http.get("http://192.168.30.100:5000/api/getstatus").then(function(data){
         console.log(data.data);
         $scope.color = {'red':0,'green':0,'blue':0};
         if(data.data.status){
@@ -37,7 +37,7 @@ appname.controller('appCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.changecolor = function(){
         var color = document.getElementById("html5colorpicker").value;
         var rgb = HEX2RGB(color)
-        $http.post("http://127.0.0.1:5000/api/color", rgb).then(function(data){
+        $http.post("http://192.168.30.100:5000/api/color", rgb).then(function(data){
             console.log(data.data);
         });
     }
